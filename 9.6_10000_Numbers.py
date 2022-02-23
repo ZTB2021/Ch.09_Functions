@@ -20,10 +20,18 @@ OUTPUT
 [2,5,1,6,3] #something like this 
 '''
 
+import random
 
 
+def create_list(x):
+    list = []
+    for i in range(x):
+        num = random.randint(1, 6)
+        list.append(num)
+    return list
 
 
+my_list = create_list(5)
 
 '''
 Function #2: Write a function called count_list that takes
@@ -44,8 +52,16 @@ OUTPUT
 '''
 
 
+def count_list(list, x):
+    count = 0
+    for item in list:
+        if item == x:
+            count += 1
+    return count
 
 
+# my_list = [1, 2, 3, 3, 3, 4, 2, 1]
+count = count_list(my_list, 3)
 
 '''
 Function #3: Write a function called average_list that returns the 
@@ -65,11 +81,12 @@ OUTPUT
 '''
 
 
-
-
-
-
-
+def average_list(list):
+    sum = 0
+    for item in list:
+        sum += item
+    avg = sum / len(list)
+    return avg
 
 
 '''
@@ -80,5 +97,12 @@ Now that the functions have been created, use them all in a main program that wi
 '''
 
 
+def myprogram():
+    my_list = create_list(10000)
+    for i in range(1, 7):
+        print("There are", count_list(my_list, i), "amount of", i, "'s")
+    print(float(average_list(my_list)))
 
 
+if __name__ == '__main__':
+    myprogram()

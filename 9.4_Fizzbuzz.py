@@ -46,8 +46,10 @@ def fizzbuzz(x):
         else:
             print(i)
 
+
 def myprgram():
-    fizzbuzz(15)
+    fizzbuzz(100)
+
 
 if __name__ == "__main__":
     myprgram()

@@ -12,8 +12,20 @@ right-justified with commas.
 '''
 
 
-def myprgram():
+def fibo(x):
+    a, b = 0, 1
+    print(f"{a:50,}")
+    print(f"{b:50,}")
+    for i in range(x-2):
+        c = a + b
+        print(f"{c:50,}")
+        a = b
+        b = c
+
+
+def main():
+    fibo(100)
 
 
 if __name__ == "__main__":
-    myprgram()
+    main()
